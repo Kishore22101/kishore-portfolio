@@ -1,5 +1,5 @@
 /* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* Tailwind Base */
 @tailwind base;
@@ -7,47 +7,39 @@
 @tailwind utilities;
 
 /* ------------------------------
-   🌟 GLOBAL STYLING FOR PORTFOLIO
+   🌙 GLOBAL THEME + BASE STYLES
 --------------------------------*/
-
 @layer base {
   body {
-    @apply transition-colors duration-300 ease-in-out;
-    font-family: 'Poppins', sans-serif;
-    background-color: #f9fafb; /* light background */
-    color: #1f2937; /* gray-800 */
-    margin: 0;
-    padding: 0;
+    @apply font-[Poppins] bg-gray-50 text-gray-800 transition-colors duration-300;
   }
 
   .dark body {
-    background-color: #0f172a; /* dark background */
-    color: #f8fafc; /* near white text */
+    @apply bg-[#0d1117] text-gray-200;
   }
 }
 
-/* Smooth scrolling for navbar links */
 html {
   scroll-behavior: smooth;
 }
 
-/* Consistent padding between sections */
+/* Section spacing clean & uniform */
 section {
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
-/* Highlight text color */
+/* Highlight text */
 .text-highlight {
   color: #facc15;
 }
 
-/* ------------------------------------
-   ✨ Animations & Effects
------------------------------------- */
+/* ------------------------------
+   ✨ Animations
+--------------------------------*/
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
@@ -55,101 +47,67 @@ section {
   }
 }
 .fade-in-up {
-  animation: fadeInUp 0.8s ease-in-out both;
+  animation: fadeInUp 0.9s ease both;
 }
 
-/* Floating glowing orbs */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-/* Gradient background animation */
 @keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 .animate-gradient {
   background-size: 200% 200%;
-  animation: gradientShift 8s ease infinite;
+  animation: gradientShift 6s ease infinite;
 }
 
 /* Navbar smooth shadow */
 .navbar {
-  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  @apply transition-all duration-300;
 }
 .navbar.scrolled {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  @apply shadow-lg bg-white dark:bg-[#0d1117];
 }
 
-/* ------------------------------------
-   🟡 Buttons
------------------------------------- */
+/* ------------------------------
+   🎛 BUTTONS (Refined Premium UI)
+--------------------------------*/
 .btn-primary {
-  background-color: #facc15;
-  color: white;
-  border-radius: 10px;
-  padding: 10px 22px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 10px rgba(250, 204, 21, 0.3);
+  @apply bg-[#facc15] text-[#111] font-semibold px-5 py-2.5 rounded-xl shadow-md transition-transform duration-300;
 }
-
 .btn-primary:hover {
-  background-color: #eab308;
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(250, 204, 21, 0.5);
+  @apply bg-[#eab308] scale-105 shadow-lg;
 }
 
 .btn-outline {
-  border: 2px solid #facc15;
-  color: #facc15;
-  border-radius: 10px;
-  padding: 10px 22px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  @apply border-2 border-[#facc15] text-[#facc15] font-semibold px-5 py-2.5 rounded-xl transition-all duration-300;
 }
-
 .btn-outline:hover {
-  background-color: #facc15;
-  color: white;
-  transform: scale(1.05);
+  @apply bg-[#facc15] text-[#111] scale-105;
 }
 
-/* Dark mode button tweaks */
+/* Dark Mode Adjustments */
 .dark .btn-primary {
-  background-color: #ca8a04;
-  color: #fff;
+  @apply bg-[#eab308] text-[#111];
 }
 .dark .btn-outline {
-  border-color: #facc15;
-  color: #facc15;
+  @apply border-[#eab308] text-[#eab308];
 }
 .dark .btn-outline:hover {
-  background-color: #facc15;
-  color: #0f172a;
+  @apply bg-[#eab308] text-[#111];
 }
 
-/* Floating scroll button glow */
+/* ------------------------------
+   🟡 Scroll Button Glow
+--------------------------------*/
 .scroll-glow {
-  box-shadow: 0 0 15px rgba(250, 204, 21, 0.6);
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.55);
+  transition: 0.3s;
 }
 .scroll-glow:hover {
-  box-shadow: 0 0 25px rgba(250, 204, 21, 0.9);
+  box-shadow: 0 0 25px rgba(250, 204, 21, 0.8);
 }
 
-/* Smooth theme transition */
+/* Smooth theme transitions */
 * {
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color .3s, color .3s, border-color .3s;
 }

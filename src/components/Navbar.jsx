@@ -5,82 +5,117 @@ import { Menu, X } from "lucide-react";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const [activeSection, setActiveSection] = useState("home");
 
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Internship", href: "#projects" },
+    { name: "Internship", href: "#internship" },
+    { name: "Projects", href: "#projects" },
     { name: "Certificates", href: "#certificates" },
     { name: "Contact", href: "#contact" },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      // Detect which section is visible
+      const sections = navLinks.map((link) =>
+        document.querySelector(link.href)
+      );
+
+      let current = "home";
+      sections.forEach((section, i) => {
+        if (section && section.getBoundingClientRect().top <= 120) {
+          current = navLinks[i].name;
+        }
+      });
+
+      setActiveSection(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <motion.nav
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
       className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled
-          ? "backdrop-blur-md bg-white/80 dark:bg-gray-900/70 shadow-lg border-b border-yellow-200/30 dark:border-gray-700/40"
+          ? "backdrop-blur-md bg-white/90 dark:bg-gray-900/80 shadow-lg border-b border-yellow-300/20"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* 🌟 Logo / Name */}
+
+        {/* Logo */}
         <motion.h1
-          className="text-2xl md:text-3xl font-extrabold text-yellow-500 tracking-wide cursor-pointer"
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.08 }}
+          className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 cursor-pointer select-none"
         >
-          Kishore Kumar
+          Kishore&nbsp;Kumar
         </motion.h1>
 
-        {/* 🖥️ Desktop Menu */}
-        <div className="hidden md:flex space-x-10 text-gray-800 dark:text-gray-200 font-medium">
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-8 text-gray-700 dark:text-gray-200 font-medium">
           {navLinks.map((link) => (
             <motion.a
               key={link.name}
               href={link.href}
-              className="relative group transition-all duration-300"
-              whileHover={{ y: -2 }}
+              className={`relative group transition-all duration-300 ${
+                activeSection === link.name
+                  ? "text-yellow-500 font-semibold"
+                  : ""
+              }`}
+              whileHover={{ scale: 1.07 }}
             >
               {link.name}
-              <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+              <span
+                className={`absolute left-0 bottom-0 h-[3px] rounded-full transition-all duration-300
+                  ${
+                    activeSection === link.name
+                      ? "w-full bg-yellow-500 shadow-md"
+                      : "w-0 bg-gradient-to-r from-yellow-400 to-yellow-600 group-hover:w-full"
+                  }`}
+              ></span>
             </motion.a>
           ))}
         </div>
 
-        {/* 📱 Mobile Menu Toggle */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden text-gray-800 dark:text-gray-200"
         >
-          {menuOpen ? <X size={26} /> : <Menu size={26} />}
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* 📱 Mobile Menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden backdrop-blur-xl bg-white/90 dark:bg-gray-900/90 border-t border-yellow-300/20 shadow-lg text-center py-6 space-y-5"
+            transition={{ duration: 0.35 }}
+            className="md:hidden backdrop-blur-xl bg-white/95 dark:bg-gray-900/95 border-t border-yellow-300/20 shadow-lg text-center py-6 space-y-6"
           >
             {navLinks.map((link) => (
               <motion.a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="block text-lg text-gray-800 dark:text-gray-200 font-medium hover:text-yellow-500 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.1 }}
+                className={`block text-lg font-semibold tracking-wide transition-all ${
+                  activeSection === link.name
+                    ? "text-yellow-500"
+                    : "text-gray-800 dark:text-gray-200"
+                }`}
               >
                 {link.name}
               </motion.a>
