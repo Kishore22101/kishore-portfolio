@@ -11,32 +11,76 @@ const NAV_LINKS = [
   { name: "Contact", href: "#contact" },
 ];
 
+const mobileMenuVariants = {
+  hidden: { opacity: 0, y: -10, scaleY: 0.97 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scaleY: 1,
+    transition: {
+      duration: 0.22,
+      ease: "easeOut",
+      when: "beforeChildren",
+      staggerChildren: 0.045,
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -8,
+    scaleY: 0.98,
+    transition: { duration: 0.18, ease: "easeInOut" },
+  },
+};
+
+const mobileLinkVariants = {
+  hidden: { opacity: 0, y: -6 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.18, ease: "easeOut" } },
+};
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+    const sectionRefs = NAV_LINKS.map((link) => ({
+      name: link.name,
+      element: document.querySelector(link.href),
+    }));
 
-      // Detect which section is visible
-      const sections = NAV_LINKS.map((link) =>
-        document.querySelector(link.href)
-      );
+    let frameId = null;
+
+    const updateOnScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 50);
 
       let current = "home";
-      sections.forEach((section, i) => {
-        if (section && section.getBoundingClientRect().top <= 120) {
-          current = NAV_LINKS[i].name;
+      for (const section of sectionRefs) {
+        if (section.element && y + 140 >= section.element.offsetTop) {
+          current = section.name;
         }
-      });
+      }
 
       setActiveSection(current);
+      frameId = null;
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      if (frameId !== null) {
+        return;
+      }
+      frameId = window.requestAnimationFrame(updateOnScroll);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
+      }
+    };
   }, []);
 
   return (
@@ -86,25 +130,28 @@ export default function Navbar() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden text-violet-100"
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      <AnimatePresence>
+      <AnimatePresence initial={false} mode="wait">
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.35 }}
-            className="md:hidden backdrop-blur-xl bg-[#0b0718]/95 border-t border-violet-400/25 shadow-lg text-center py-6 space-y-6"
+            variants={mobileMenuVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="md:hidden origin-top transform-gpu will-change-transform backdrop-blur-xl bg-[#0b0718]/95 border-t border-violet-400/25 shadow-lg text-center py-6 space-y-6"
           >
             {NAV_LINKS.map((link) => (
               <motion.a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
+                variants={mobileLinkVariants}
                 whileHover={{ scale: 1.1 }}
                 className={`block text-lg font-semibold tracking-wide transition-all ${
                   activeSection === link.name
