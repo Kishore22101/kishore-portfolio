@@ -7,10 +7,10 @@ export default function Contact() {
     <motion.section
       id="contact"
       className="relative py-20 text-center overflow-hidden"
-      initial={{ opacity: 0, y: 60 }}
+      initial={{ opacity: 0, y: 34 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.1, margin: "0px 0px -10% 0px" }}
+      transition={{ duration: 0.55, ease: "easeOut" }}
     >
       <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-violet-500 via-fuchsia-400 to-violet-500 animate-gradient" />
 

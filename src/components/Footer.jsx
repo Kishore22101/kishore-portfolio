@@ -25,7 +25,8 @@ export default function Footer() {
     <motion.footer
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.08, margin: "0px 0px -8% 0px" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className="relative bg-gradient-to-br from-[#070411] via-[#0b0718] to-[#06030f] text-center py-14 mt-20 border-t border-violet-400/20 overflow-hidden shadow-[0_-4px_30px_rgba(124,58,237,0.22)]"
     >
       <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-violet-500 via-fuchsia-400 to-violet-500 animate-gradient" />

@@ -55,9 +55,13 @@ export default function Certificates() {
   ];
 
   return (
-    <section
+    <motion.section
       id="certificates"
       className="py-20 text-center"
+      initial={{ opacity: 0, y: 34 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1, margin: "0px 0px -10% 0px" }}
+      transition={{ duration: 0.55, ease: "easeOut" }}
     >
       <div className="section-wrap">
         <div className="text-center mb-12">
@@ -86,7 +90,8 @@ export default function Certificates() {
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
+              viewport={{ once: true, amount: 0.08 }}
+              transition={{ delay: index * 0.06, duration: 0.45 }}
               whileHover={{ scale: 1.05, rotate: 0.5 }}
               className={`relative p-[2px] rounded-2xl shadow-xl hover:shadow-2xl bg-gradient-to-r ${cert.color} transform transition-all duration-300`}
             >
@@ -118,6 +123,6 @@ export default function Certificates() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

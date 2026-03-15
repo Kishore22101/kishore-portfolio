@@ -30,10 +30,10 @@ export default function About() {
     <motion.section
       id="about"
       className="relative py-24 overflow-hidden"
-      initial={{ opacity: 0, y: 60 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 1 }}
+      viewport={{ once: true, amount: 0.12, margin: "0px 0px -8% 0px" }}
+      transition={{ duration: 0.65 }}
     >
       <div className="absolute top-28 left-12 w-80 h-80 bg-violet-500/18 blur-[120px] rounded-full pointer-events-none"></div>
       <div className="absolute bottom-28 right-12 w-80 h-80 bg-fuchsia-500/18 blur-[120px] rounded-full pointer-events-none"></div>
@@ -45,7 +45,8 @@ export default function About() {
           className="section-title text-center text-4xl md:text-5xl mb-5"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.45 }}
         >
           About <span className="section-accent">Me</span>
         </motion.h2>
@@ -59,7 +60,8 @@ export default function About() {
           className="relative glass-panel royal-surface rounded-3xl p-8 md:p-14"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.55 }}
         >
           <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <div>

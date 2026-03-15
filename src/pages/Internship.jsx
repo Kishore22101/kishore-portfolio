@@ -30,10 +30,10 @@ export default function Internship() {
     <motion.section
       id="internship"
       className="py-20 text-center"
-      initial={{ opacity: 0, y: 60 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.1, margin: "0px 0px -10% 0px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="section-wrap">
         <div className="text-center mb-12">
@@ -60,8 +60,8 @@ export default function Internship() {
               className={`bg-gradient-to-r ${p.color} p-[2px] rounded-2xl shadow-lg hover:shadow-2xl transition duration-300`}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2, duration: 0.8 }}
+              viewport={{ once: true, amount: 0.08 }}
+              transition={{ delay: i * 0.08, duration: 0.45 }}
             >
               <div className="glass-panel royal-surface royal-hover rounded-2xl p-6 h-full flex flex-col justify-between text-left">
                 <div>

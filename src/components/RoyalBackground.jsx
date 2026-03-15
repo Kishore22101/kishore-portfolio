@@ -43,12 +43,15 @@ export default function RoyalBackground() {
         style={{ willChange: "transform" }}
       />
 
-      <div
-        className="absolute inset-0 opacity-[0.06]"
+      <motion.div
+        className="absolute inset-0 opacity-[0.1] transform-gpu"
+        animate={reduceMotion ? undefined : { opacity: [0.08, 0.14, 0.08] }}
+        transition={reduceMotion ? undefined : { duration: 14, repeat: Infinity, ease: "easeInOut" }}
         style={{
           backgroundImage:
-            "linear-gradient(rgba(196,181,253,0.28) 1px, transparent 1px), linear-gradient(90deg, rgba(196,181,253,0.28) 1px, transparent 1px)",
+            "linear-gradient(rgba(196,181,253,0.36) 1px, transparent 1px), linear-gradient(90deg, rgba(196,181,253,0.36) 1px, transparent 1px)",
           backgroundSize: "64px 64px",
+          willChange: "opacity",
         }}
       />
 
