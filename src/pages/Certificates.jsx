@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Award } from "lucide-react";
+import { Award, ExternalLink } from "lucide-react";
 
 export default function Certificates() {
   const certificates = [
@@ -60,15 +60,22 @@ export default function Certificates() {
       className="py-20 text-center"
     >
       <div className="section-wrap">
+        <div className="text-center mb-12">
+          <div className="section-kicker mb-5"><span className="royal-glow-dot" />Credentials</div>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="section-title text-4xl font-bold mb-12"
+          className="section-title text-4xl font-bold mb-5"
         >
           <Award className="inline-block mr-3 text-violet-400" size={36} />
           Certificates & Achievements
         </motion.h2>
+          <div className="royal-divider" />
+          <p className="section-subtitle">
+            Certifications and learning milestones that support my technical profile and professional growth.
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {certificates.map((cert, index) => (
@@ -83,8 +90,9 @@ export default function Certificates() {
               whileHover={{ scale: 1.05, rotate: 0.5 }}
               className={`relative p-[2px] rounded-2xl shadow-xl hover:shadow-2xl bg-gradient-to-r ${cert.color} transform transition-all duration-300`}
             >
-              <div className="glass-panel rounded-2xl p-6 h-full flex flex-col justify-between text-left hover:shadow-inner">
+              <div className="glass-panel royal-surface royal-hover rounded-2xl p-6 h-full flex flex-col justify-between text-left hover:shadow-inner">
                 <div>
+                  <div className="section-kicker text-xs mb-4">Certification</div>
                   <h3 className="text-xl font-semibold text-violet-200 mb-2">
                     {cert.title}
                   </h3>
@@ -101,9 +109,9 @@ export default function Certificates() {
 
                 <motion.span
                   whileHover={{ scale: 1.1 }}
-                  className="mt-4 inline-block text-sm font-medium text-violet-300 hover:underline self-start"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-violet-300 hover:underline self-start"
                 >
-                  🔗 View Certificate
+                  <ExternalLink size={16} /> View Certificate
                 </motion.span>
               </div>
             </motion.a>

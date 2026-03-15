@@ -8,6 +8,7 @@ import Contact from "./pages/Contact.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import Certificates from "./pages/Certificates.jsx";
 import Projects from "./pages/Projects.jsx";
+import RoyalBackground from "./components/RoyalBackground.jsx";
 
 
 
@@ -17,16 +18,19 @@ function App() {
   }, []);
 
   return (
-    <div className="theme-shell text-slate-100 font-poppins overflow-x-hidden">
-      <Navbar />
-      <Home />
-      <About />
-      <Internship />
-      <Projects />
-      <Certificates />
-      <Contact />
-      <Footer />
-      <ScrollToTop />
+    <div className="theme-shell text-slate-100 font-poppins overflow-x-hidden relative isolate">
+      <RoyalBackground />
+      <div className="relative z-10">
+        <Navbar />
+        <Home />
+        <About />
+        <Internship />
+        <Projects />
+        <Certificates />
+        <Contact />
+        <Footer />
+        <ScrollToTop />
+      </div>
     </div>
   );
 }

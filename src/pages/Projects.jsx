@@ -7,7 +7,7 @@ export default function Projects() {
     {
       title: "EatzUp — Full Stack Food Delivery App",
       desc: "A complete food ordering platform with login, cart, order, payment, and PDF invoice generation. Built with MERN stack and a modern, responsive UI.",
-      video: "https://www.loom.com/share/7ef6e7d69813471d87d6547c005c8c82?sid=af770c27-b3e7-4003-956f-361f2141cf4a", // 🔗 replace this with your actual demo video link
+      video: "https://www.loom.com/share/7ef6e7d69813471d87d6547c005c8c82?sid=af770c27-b3e7-4003-956f-361f2141cf4a", // replace this with your actual demo video link
       github: "https://github.com/Kishore22101/Food-Delivery-App",
       tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
       color: "from-violet-500 to-fuchsia-500",
@@ -20,15 +20,22 @@ export default function Projects() {
       className="py-20 text-center"
     >
       <div className="section-wrap">
+        <div className="text-center mb-12">
+          <div className="section-kicker mb-5"><span className="royal-glow-dot" />Selected Work</div>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="section-title text-4xl font-bold mb-12"
+          className="section-title text-4xl font-bold mb-5"
         >
           <Code className="inline-block mr-3 text-violet-400" size={36} />
           Featured Projects
         </motion.h2>
+          <div className="royal-divider" />
+          <p className="section-subtitle">
+            A focused presentation of project work that reflects my technical approach, interface quality, and application structure.
+          </p>
+        </div>
 
         <div className="flex justify-center">
           {projects.map((proj, index) => (
@@ -40,12 +47,24 @@ export default function Projects() {
               whileHover={{ scale: 1.03 }}
               className={`w-full md:w-2/3 lg:w-1/2 p-[2px] rounded-2xl shadow-lg bg-gradient-to-r ${proj.color} transform hover:shadow-2xl transition-all duration-300`}
             >
-              <div className="glass-panel rounded-2xl p-8 text-violet-50">
+              <div className="glass-panel royal-surface royal-hover rounded-2xl p-8 text-violet-50 text-left">
+                <div className="section-kicker text-xs mb-5">Case Study</div>
                 <h3 className="text-2xl font-semibold mb-3">{proj.title}</h3>
 
                 <p className="text-base text-violet-100/80 mb-5 leading-relaxed">{proj.desc}</p>
 
-                <div className="flex flex-wrap justify-center gap-2 mb-6">
+                <div className="grid gap-4 sm:grid-cols-2 mb-6">
+                  <div className="info-card royal-hover rounded-2xl p-4">
+                    <p className="meta-label mb-2">Architecture</p>
+                    <p className="meta-value text-sm">Full stack application with modular backend logic and API-driven interactions</p>
+                  </div>
+                  <div className="info-card royal-hover rounded-2xl p-4">
+                    <p className="meta-label mb-2">Presentation</p>
+                    <p className="meta-value text-sm">Responsive user interface with clean visual hierarchy and modern styling</p>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap justify-start gap-2 mb-6">
                   {proj.tech.map((t, i) => (
                     <span
                       key={i}
@@ -56,7 +75,7 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex justify-center gap-5">
+                <div className="flex flex-wrap justify-start gap-4">
                   {proj.video && (
                     <motion.a
                       href={proj.video}

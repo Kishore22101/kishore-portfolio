@@ -36,8 +36,10 @@ export default function Internship() {
       transition={{ duration: 1, ease: "easeOut" }}
     >
       <div className="section-wrap">
+        <div className="text-center mb-12">
+          <div className="section-kicker mb-5"><span className="royal-glow-dot" />Experience</div>
         <motion.h2
-          className="section-title text-4xl font-bold mb-12"
+          className="section-title text-4xl font-bold mb-5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
@@ -45,6 +47,11 @@ export default function Internship() {
           <Briefcase className="inline-block mr-3 text-violet-400" size={36} />
           My Internships
         </motion.h2>
+          <div className="royal-divider" />
+          <p className="section-subtitle">
+            Practical experience that strengthened my foundation in data science, full stack engineering, and structured project delivery.
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-10">
           {internships.map((p, i) => (
@@ -56,8 +63,9 @@ export default function Internship() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.2, duration: 0.8 }}
             >
-              <div className="glass-panel rounded-2xl p-6 h-full flex flex-col justify-between text-left">
+              <div className="glass-panel royal-surface royal-hover rounded-2xl p-6 h-full flex flex-col justify-between text-left">
                 <div>
+                  <div className="section-kicker text-xs mb-4">Internship Experience</div>
                   <h3 className="text-2xl font-semibold text-violet-200 mb-2">
                     {p.title}
                   </h3>
