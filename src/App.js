@@ -12,28 +12,20 @@ import Projects from "./pages/Projects.jsx";
 
 
 function App() {
-  // Optional: Add a little scroll restoration when navigating
   useEffect(() => {
     window.history.scrollRestoration = "manual";
   }, []);
 
   return (
-    <div className="bg-gray-50 dark:bg-darkbg text-gray-900 dark:text-gray-100 font-poppins transition-colors duration-300 ease-in-out overflow-x-hidden">
-      {/* 🌐 Navbar */}
+    <div className="theme-shell text-slate-100 font-poppins overflow-x-hidden">
       <Navbar />
-
-      {/* 🏠 Page Sections */}
       <Home />
       <About />
       <Internship />
       <Projects />
       <Certificates />
       <Contact />
-
-      {/* 🔚 Footer */}
       <Footer />
-
-      {/* 🆙 Scroll To Top Button (only one) */}
       <ScrollToTop />
     </div>
   );

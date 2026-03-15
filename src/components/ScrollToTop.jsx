@@ -34,7 +34,7 @@ export default function ScrollToTop() {
             onClick={scrollToTop}
             whileHover={{ scale: 1.15, rotate: 5 }}
             whileTap={{ scale: 0.9 }}
-            className="p-3 md:p-4 rounded-full bg-yellow-400 text-white scroll-glow shadow-lg hover:bg-yellow-500 dark:bg-yellow-500 dark:hover:bg-yellow-400 transition-all duration-300"
+            className="p-3 md:p-4 rounded-full bg-violet-500 text-white scroll-glow shadow-lg hover:bg-fuchsia-500 transition-all duration-300 border border-violet-300/50"
             title="Back to top"
           >
             <ArrowUp size={24} />

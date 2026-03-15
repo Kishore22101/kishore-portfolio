@@ -26,22 +26,18 @@ export default function Footer() {
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="relative bg-gradient-to-br from-black via-gray-900 to-black text-center py-14 mt-20 border-t border-yellow-500 overflow-hidden shadow-[0_-4px_30px_rgba(250,204,21,0.1)]"
+      className="relative bg-gradient-to-br from-[#070411] via-[#0b0718] to-[#06030f] text-center py-14 mt-20 border-t border-violet-400/20 overflow-hidden shadow-[0_-4px_30px_rgba(124,58,237,0.22)]"
     >
-      {/* 🌈 Glowing Yellow Gradient Border Top */}
-      <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-500 animate-gradient" />
+      <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-violet-500 via-fuchsia-400 to-violet-500 animate-gradient" />
 
-      {/* ✨ Floating Glow Orbs */}
-      <div className="absolute top-10 left-20 w-48 h-48 bg-yellow-400/10 blur-3xl rounded-full animate-pulse hidden md:block"></div>
-      <div className="absolute bottom-10 right-20 w-48 h-48 bg-yellow-500/10 blur-3xl rounded-full animate-pulse hidden md:block"></div>
+      <div className="absolute top-10 left-20 w-48 h-48 bg-violet-500/15 blur-3xl rounded-full animate-pulse hidden md:block"></div>
+      <div className="absolute bottom-10 right-20 w-48 h-48 bg-fuchsia-500/15 blur-3xl rounded-full animate-pulse hidden md:block"></div>
 
-      {/* 🌍 Footer Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-6 text-yellow-400 tracking-wide drop-shadow-lg">
+        <h2 className="text-3xl font-bold mb-6 text-violet-300 tracking-wide drop-shadow-lg">
           Join the Journey 🚀
         </h2>
 
-        {/* 🌐 Social Icons */}
         <div className="flex justify-center gap-8 mb-6">
           {socialLinks.map((social, index) => (
             <motion.a
@@ -52,7 +48,7 @@ export default function Footer() {
               title={social.label}
               whileHover={{ scale: 1.25, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
-              className="group p-3 rounded-full bg-yellow-400 text-black shadow-md transition-all duration-300 hover:shadow-yellow-400/50 hover:bg-yellow-500 ring-2 ring-transparent hover:ring-yellow-300"
+              className="group p-3 rounded-full bg-violet-500 text-white shadow-md transition-all duration-300 hover:shadow-violet-500/50 hover:bg-violet-400 ring-2 ring-transparent hover:ring-violet-300"
             >
               <motion.div
                 whileHover={{
@@ -66,27 +62,25 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* 📝 Footer Text */}
-        <p className="text-gray-400 text-sm mb-1">
+        <p className="text-violet-100/70 text-sm mb-1">
           © {new Date().getFullYear()}{" "}
-          <span className="text-yellow-400 font-semibold">Kishore Kumar</span> — All Rights Reserved.
+          <span className="text-violet-300 font-semibold">Kishore Kumar</span> — All Rights Reserved.
         </p>
 
-        <p className="text-xs text-gray-500 mt-1">
+        <p className="text-xs text-violet-100/55 mt-1">
           Built with ❤️ using{" "}
-          <span className="text-yellow-400">React</span> +{" "}
-          <span className="text-yellow-400">Tailwind CSS</span>
+          <span className="text-violet-300">React</span> +{" "}
+          <span className="text-violet-300">Tailwind CSS</span>
         </p>
 
-        {/* 💖 Signature */}
         <motion.p
-          className="mt-4 text-xs text-gray-500 italic"
+          className="mt-4 text-xs text-violet-100/55 italic"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
           Designed & Developed by{" "}
-          <span className="text-yellow-400 font-medium">Kishore Kumar</span> 👨‍💻
+          <span className="text-violet-300 font-medium">Kishore Kumar</span> 👨‍💻
         </motion.p>
       </div>
     </motion.footer>

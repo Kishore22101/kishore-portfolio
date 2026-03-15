@@ -10,7 +10,7 @@ export default function Certificates() {
       link: "https://www.linkedin.com/posts/kishore-k-0717542a1_web-development-internship-activity-7357825659819216897-OUPN?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEjnVFUB1iYleVzTu4IuG8g6X1s9YBQIM08",
       desc: "Completed an intensive internship and full stack course using React, Node.js, Express, MongoDB, and Tailwind CSS.",
       date: "May 2025",
-      color: "from-yellow-400 to-amber-300",
+      color: "from-violet-500 to-fuchsia-500",
     },
     {
       title: "Introduction to Internet of Things",
@@ -18,7 +18,7 @@ export default function Certificates() {
       link: "https://www.linkedin.com/posts/kishore-k-0717542a1_introduction-to-internet-of-things-activity-7333934063260471296-00uy?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEjnVFUB1iYleVzTu4IuG8g6X1s9YBQIM08",
       desc: "Learned the fundamentals of IoT, sensors, and data transmission technologies.",
       date: "April 2024",
-      color: "from-blue-400 to-cyan-300",
+      color: "from-indigo-500 to-blue-500",
     },
     {
       title: "Cloud Computing",
@@ -26,7 +26,7 @@ export default function Certificates() {
       link: "https://www.linkedin.com/posts/kishore-k-0717542a1_cloudcomputing-nptel-certification-activity-7267583398762680321-jiRE?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEjnVFUB1iYleVzTu4IuG8g6X1s9YBQIM08",
       desc: "Covered virtualization, cloud deployment models, and distributed computing concepts.",
       date: "Jan 2024",
-      color: "from-purple-400 to-pink-300",
+      color: "from-purple-500 to-pink-500",
     },
     {
       title: "The Complete HTML Course",
@@ -34,7 +34,7 @@ export default function Certificates() {
       link: "https://www.linkedin.com/posts/kishore-k-0717542a1_html-webdevelopment-continuouslearning-activity-7230961175725797376-hr_a?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEjnVFUB1iYleVzTu4IuG8g6X1s9YBQIM08",
       desc: "Mastered HTML5 essentials and best practices for modern, semantic web design.",
       date: "Sep 2023",
-      color: "from-orange-400 to-yellow-300",
+      color: "from-violet-500 to-indigo-500",
     },
     {
       title: "Java for Beginners",
@@ -42,7 +42,7 @@ export default function Certificates() {
       link: "https://www.linkedin.com/posts/kishore-k-0717542a1_greate-teaching-udemy-activity-7194756624442437635-JPI4?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEjnVFUB1iYleVzTu4IuG8g6X1s9YBQIM08",
       desc: "Learned core Java concepts including OOP, arrays, loops, and file handling.",
       date: "Jun 2023",
-      color: "from-green-400 to-emerald-300",
+      color: "from-fuchsia-500 to-violet-500",
     },
     {
       title: "GitHub Certificate",
@@ -50,66 +50,65 @@ export default function Certificates() {
       link: "https://www.linkedin.com/posts/kishore-k-0717542a1_github-activity-7334449160068153344-4uXb?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEjnVFUB1iYleVzTu4IuG8g6X1s9YBQIM08",
       desc: "Certified for completing GitHub fundamentals and practical version control operations.",
       date: "Mar 2024",
-      color: "from-gray-700 to-gray-500",
+      color: "from-slate-500 to-violet-500",
     },
   ];
 
   return (
     <section
       id="certificates"
-      className="py-20 px-6 bg-gradient-to-b from-yellow-50 to-white dark:from-gray-900 dark:to-gray-950 text-center"
+      className="py-20 text-center"
     >
-      {/* Title */}
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl font-bold text-gray-800 dark:text-white mb-12"
-      >
-        <Award className="inline-block mr-3 text-yellow-500" size={36} />
-        Certificates & Achievements
-      </motion.h2>
+      <div className="section-wrap">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="section-title text-4xl font-bold mb-12"
+        >
+          <Award className="inline-block mr-3 text-violet-400" size={36} />
+          Certificates & Achievements
+        </motion.h2>
 
-      {/* Certificates Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-        {certificates.map((cert, index) => (
-          <motion.a
-            key={index}
-            href={cert.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.6 }}
-            whileHover={{ scale: 1.05, rotate: 0.5 }}
-            className={`relative p-[2px] rounded-2xl shadow-xl hover:shadow-2xl bg-gradient-to-r ${cert.color} transform transition-all duration-300`}
-          >
-            <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 h-full flex flex-col justify-between text-left hover:shadow-inner">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-yellow-400 mb-2">
-                  {cert.title}
-                </h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mb-1 italic">
-                  {cert.org}
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
-                  {cert.date}
-                </p>
-                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                  {cert.desc}
-                </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {certificates.map((cert, index) => (
+            <motion.a
+              key={index}
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+              whileHover={{ scale: 1.05, rotate: 0.5 }}
+              className={`relative p-[2px] rounded-2xl shadow-xl hover:shadow-2xl bg-gradient-to-r ${cert.color} transform transition-all duration-300`}
+            >
+              <div className="glass-panel rounded-2xl p-6 h-full flex flex-col justify-between text-left hover:shadow-inner">
+                <div>
+                  <h3 className="text-xl font-semibold text-violet-200 mb-2">
+                    {cert.title}
+                  </h3>
+                  <p className="text-sm text-violet-100/70 mb-1 italic">
+                    {cert.org}
+                  </p>
+                  <p className="text-xs text-violet-100/60 mb-3">
+                    {cert.date}
+                  </p>
+                  <p className="text-violet-100/75 text-sm leading-relaxed">
+                    {cert.desc}
+                  </p>
+                </div>
+
+                <motion.span
+                  whileHover={{ scale: 1.1 }}
+                  className="mt-4 inline-block text-sm font-medium text-violet-300 hover:underline self-start"
+                >
+                  🔗 View Certificate
+                </motion.span>
               </div>
-
-              {/* View Button */}
-              <motion.span
-                whileHover={{ scale: 1.1 }}
-                className="mt-4 inline-block text-sm font-medium text-yellow-600 dark:text-yellow-400 hover:underline self-start"
-              >
-                🔗 View Certificate
-              </motion.span>
-            </div>
-          </motion.a>
-        ))}
+            </motion.a>
+          ))}
+        </div>
       </div>
     </section>
   );

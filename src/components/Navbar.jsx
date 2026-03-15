@@ -46,29 +46,26 @@ export default function Navbar() {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled
-          ? "backdrop-blur-md bg-white/90 dark:bg-gray-900/80 shadow-lg border-b border-yellow-300/20"
-          : "bg-transparent"
+          ? "backdrop-blur-xl bg-[#090614]/85 shadow-[0_10px_30px_rgba(5,3,13,0.7)] border-b border-violet-400/20"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-
-        {/* Logo */}
         <motion.h1
           whileHover={{ scale: 1.08 }}
-          className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 cursor-pointer select-none"
+          className="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-fuchsia-300 to-violet-500 cursor-pointer select-none"
         >
           Kishore&nbsp;Kumar
         </motion.h1>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 text-gray-700 dark:text-gray-200 font-medium">
+        <div className="hidden md:flex space-x-8 text-violet-100/90 font-medium">
           {navLinks.map((link) => (
             <motion.a
               key={link.name}
               href={link.href}
               className={`relative group transition-all duration-300 ${
                 activeSection === link.name
-                  ? "text-yellow-500 font-semibold"
+                  ? "text-violet-300 font-semibold"
                   : ""
               }`}
               whileHover={{ scale: 1.07 }}
@@ -78,24 +75,22 @@ export default function Navbar() {
                 className={`absolute left-0 bottom-0 h-[3px] rounded-full transition-all duration-300
                   ${
                     activeSection === link.name
-                      ? "w-full bg-yellow-500 shadow-md"
-                      : "w-0 bg-gradient-to-r from-yellow-400 to-yellow-600 group-hover:w-full"
+                      ? "w-full bg-violet-400 shadow-md shadow-violet-500/40"
+                      : "w-0 bg-gradient-to-r from-violet-400 to-fuchsia-400 group-hover:w-full"
                   }`}
               ></span>
             </motion.a>
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-gray-800 dark:text-gray-200"
+          className="md:hidden text-violet-100"
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -103,7 +98,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.35 }}
-            className="md:hidden backdrop-blur-xl bg-white/95 dark:bg-gray-900/95 border-t border-yellow-300/20 shadow-lg text-center py-6 space-y-6"
+            className="md:hidden backdrop-blur-xl bg-[#0b0718]/95 border-t border-violet-400/25 shadow-lg text-center py-6 space-y-6"
           >
             {navLinks.map((link) => (
               <motion.a
@@ -113,8 +108,8 @@ export default function Navbar() {
                 whileHover={{ scale: 1.1 }}
                 className={`block text-lg font-semibold tracking-wide transition-all ${
                   activeSection === link.name
-                    ? "text-yellow-500"
-                    : "text-gray-800 dark:text-gray-200"
+                    ? "text-violet-300"
+                    : "text-violet-100"
                 }`}
               >
                 {link.name}
