@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
+const ROLES = [
+  "Full Stack Developer",
+  "Core Java Developer",
+];
+
 export default function Home() {
-  // Typewriter-like rotating text
-  const roles = [
-    "Full Stack Developer 💻",
-    "Core Java 🤖",
-  ];
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
+      setCurrentRole((prev) => (prev + 1) % ROLES.length);
     }, 2500);
     return () => clearInterval(interval);
   }, []);
@@ -83,7 +83,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              Hi, I'm <span className="section-accent">Kishore Kumar</span> 👋
+              Hi, I'm <span className="section-accent">Kishore Kumar</span>
             </motion.h1>
 
             <motion.p
@@ -93,7 +93,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              {roles[currentRole]}
+              {ROLES[currentRole]}
             </motion.p>
 
             <motion.p

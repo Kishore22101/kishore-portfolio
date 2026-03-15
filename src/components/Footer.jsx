@@ -35,7 +35,7 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold mb-6 text-violet-300 tracking-wide drop-shadow-lg">
-          Join the Journey 🚀
+          Join the Journey
         </h2>
 
         <div className="flex justify-center gap-8 mb-6">
@@ -80,7 +80,7 @@ export default function Footer() {
           transition={{ delay: 0.4, duration: 0.8 }}
         >
           Designed & Developed by{" "}
-          <span className="text-violet-300 font-medium">Kishore Kumar</span> 👨‍💻
+          <span className="text-violet-300 font-medium">Kishore Kumar</span>
         </motion.p>
       </div>
     </motion.footer>

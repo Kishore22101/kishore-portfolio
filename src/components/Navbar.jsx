@@ -2,33 +2,33 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
+const NAV_LINKS = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Internship", href: "#internship" },
+  { name: "Projects", href: "#projects" },
+  { name: "Certificates", href: "#certificates" },
+  { name: "Contact", href: "#contact" },
+];
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Internship", href: "#internship" },
-    { name: "Projects", href: "#projects" },
-    { name: "Certificates", href: "#certificates" },
-    { name: "Contact", href: "#contact" },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
       // Detect which section is visible
-      const sections = navLinks.map((link) =>
+      const sections = NAV_LINKS.map((link) =>
         document.querySelector(link.href)
       );
 
       let current = "home";
       sections.forEach((section, i) => {
         if (section && section.getBoundingClientRect().top <= 120) {
-          current = navLinks[i].name;
+          current = NAV_LINKS[i].name;
         }
       });
 
@@ -59,7 +59,7 @@ export default function Navbar() {
         </motion.h1>
 
         <div className="hidden md:flex space-x-8 text-violet-100/90 font-medium">
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <motion.a
               key={link.name}
               href={link.href}
@@ -100,7 +100,7 @@ export default function Navbar() {
             transition={{ duration: 0.35 }}
             className="md:hidden backdrop-blur-xl bg-[#0b0718]/95 border-t border-violet-400/25 shadow-lg text-center py-6 space-y-6"
           >
-            {navLinks.map((link) => (
+            {NAV_LINKS.map((link) => (
               <motion.a
                 key={link.name}
                 href={link.href}

@@ -24,7 +24,7 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Let’s <span className="section-accent">Connect</span> 🤝
+          Let’s <span className="section-accent">Connect</span>
         </motion.h2>
 
         <motion.p
