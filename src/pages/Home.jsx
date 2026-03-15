@@ -58,8 +58,8 @@ export default function Home() {
       <div className="absolute inset-0 bg-gradient-to-b from-violet-900/10 via-transparent to-fuchsia-900/10" style={{ zIndex: 0 }} />
 
       <div className="section-wrap">
-        <div className="glass-panel rounded-[2rem] px-6 py-10 md:px-12 md:py-14 relative z-10 grid items-center gap-12 lg:grid-cols-[1.2fr_0.95fr]">
-          <div className="relative z-10 text-center lg:text-left">
+        <div className="glass-panel rounded-[2rem] px-6 py-8 md:px-12 md:py-14 relative z-10 grid items-center gap-8 lg:gap-12 lg:grid-cols-[1.2fr_0.95fr]">
+          <div className="order-2 lg:order-1 relative z-10 text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -172,7 +172,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative flex justify-center lg:justify-end">
+          <div className="order-1 lg:order-2 relative flex justify-center lg:justify-end mb-2 lg:mb-0">
             <motion.div
               className="hero-frame royal-surface w-full max-w-[380px]"
               initial={{ opacity: 0, x: 30 }}
