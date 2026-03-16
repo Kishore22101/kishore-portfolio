@@ -68,12 +68,6 @@ export default function Footer() {
           <span className="text-violet-300 font-semibold">Kishore Kumar</span> — All Rights Reserved.
         </p>
 
-        <p className="text-xs text-violet-100/55 mt-1">
-          Built with ❤️ using{" "}
-          <span className="text-violet-300">React</span> +{" "}
-          <span className="text-violet-300">Tailwind CSS</span>
-        </p>
-
         <motion.p
           className="mt-4 text-xs text-violet-100/55 italic"
           initial={{ opacity: 0 }}
