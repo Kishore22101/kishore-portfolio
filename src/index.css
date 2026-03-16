@@ -1,5 +1,6 @@
 /* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&display=swap');
 
 /* Tailwind Base */
 @tailwind base;
@@ -105,6 +106,59 @@ section {
     radial-gradient(circle at 85% 0%, rgba(168, 85, 247, 0.2), transparent 25%),
     radial-gradient(circle at 70% 80%, rgba(76, 29, 149, 0.28), transparent 35%),
     #05030b;
+}
+
+.portfolio-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: #000;
+}
+
+.portfolio-loader--exit {
+  animation: loaderSlideUp 0.68s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.portfolio-loader-title {
+  margin: 0;
+  color: #d6d3ca;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.4rem, 9vw, 5rem);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: normal;
+  text-align: center;
+}
+
+.portfolio-loader-bar {
+  width: min(560px, 82vw);
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+}
+
+.portfolio-loader-bar span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: #fff;
+  transition: width 0.18s ease;
+}
+
+@keyframes loaderSlideUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
 }
 
 .section-wrap {
@@ -287,6 +341,11 @@ section {
 }
 
 @media (max-width: 768px) {
+  .portfolio-loader-title {
+    white-space: pre-line;
+    line-height: 1.05;
+  }
+
   .section-subtitle {
     max-width: none;
   }

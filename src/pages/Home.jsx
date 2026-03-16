@@ -92,7 +92,7 @@ export default function Home() {
 
             <motion.p
               key={currentRole}
-              className="text-xl md:text-2xl text-violet-200 font-medium min-h-[2rem]"
+              className="text-xl md:text-2xl text-violet-200 font-semibold min-h-[2rem]"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -110,7 +110,7 @@ export default function Home() {
             </motion.p>
 
             <motion.p
-              className="text-base md:text-lg text-violet-100/70 mt-3 max-w-2xl"
+              className="text-base md:text-lg text-violet-100/85 mt-3 max-w-2xl"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.4, duration: 1 }}
@@ -150,7 +150,7 @@ export default function Home() {
                   className="glass-panel-soft rounded-xl px-4 py-3 inline-flex items-center gap-3 text-violet-100/90"
                 >
                   <Icon size={18} className="text-violet-300" />
-                  <span className="text-sm font-medium">{label}</span>
+                  <span className="text-sm font-semibold">{label}</span>
                 </motion.a>
               ))}
             </div>
