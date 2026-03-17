@@ -113,43 +113,154 @@ section {
   inset: 0;
   z-index: 120;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.65rem;
-  background: #000;
+  padding: 1.25rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(168, 85, 247, 0.2), transparent 34%),
+    radial-gradient(circle at 86% 14%, rgba(79, 70, 229, 0.2), transparent 30%),
+    radial-gradient(circle at 74% 82%, rgba(109, 40, 217, 0.24), transparent 40%),
+    #05030f;
+  background-size: 128% 128%;
+  animation: loaderBackdropIn 0.6s ease-out both, loaderBackdropDrift 9s ease-in-out infinite alternate;
 }
 
 .portfolio-loader--exit {
   animation: loaderSlideUp 0.68s cubic-bezier(0.76, 0, 0.24, 1) forwards;
 }
 
-.portfolio-loader-title {
+.portfolio-loader-glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(70px);
+  pointer-events: none;
+  animation: loaderGlowFloat 6.8s ease-in-out infinite;
+}
+
+.portfolio-loader-glow--left {
+  width: clamp(220px, 34vw, 420px);
+  height: clamp(220px, 34vw, 420px);
+  left: -7%;
+  top: 12%;
+  background: rgba(168, 85, 247, 0.28);
+  animation-name: loaderGlowFloatLeft;
+}
+
+.portfolio-loader-glow--right {
+  width: clamp(240px, 36vw, 460px);
+  height: clamp(240px, 36vw, 460px);
+  right: -7%;
+  bottom: 4%;
+  background: rgba(99, 102, 241, 0.26);
+  animation-name: loaderGlowFloatRight;
+  animation-delay: 0.25s;
+}
+
+.portfolio-loader-card {
+  width: min(760px, 92vw);
+  min-height: clamp(300px, 40vh, 410px);
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  padding: clamp(1.6rem, 2.6vw, 2.3rem) clamp(1.25rem, 3.2vw, 3.1rem);
+  background: linear-gradient(135deg, rgba(20, 14, 43, 0.9), rgba(11, 8, 28, 0.88));
+  border: 1px solid rgba(196, 181, 253, 0.2);
+  box-shadow: 0 35px 90px rgba(7, 4, 20, 0.72), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  isolation: isolate;
+  animation: loaderCardIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both, loaderCardFloat 5.8s ease-in-out infinite;
+}
+
+.portfolio-loader-card::before {
+  content: "";
+  position: absolute;
+  inset: -90%;
+  z-index: -1;
+  background: conic-gradient(from 90deg, transparent 0deg, rgba(192, 132, 252, 0.22) 80deg, transparent 170deg, rgba(99, 102, 241, 0.2) 245deg, transparent 360deg);
+  animation: loaderRingSpin 8s linear infinite;
+}
+
+.portfolio-loader-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 16% 24%, rgba(255, 255, 255, 0.22) 0 2px, transparent 2.6px),
+    radial-gradient(circle at 82% 30%, rgba(255, 255, 255, 0.18) 0 1.8px, transparent 2.5px),
+    radial-gradient(circle at 68% 74%, rgba(255, 255, 255, 0.2) 0 1.7px, transparent 2.4px),
+    radial-gradient(circle at 30% 78%, rgba(255, 255, 255, 0.16) 0 1.6px, transparent 2.2px);
+  opacity: 0.3;
+  mix-blend-mode: screen;
+  animation: loaderSparkle 2.4s ease-in-out infinite;
+}
+
+.portfolio-loader-kicker {
   margin: 0;
-  color: #d6d3ca;
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(2.4rem, 9vw, 5rem);
-  line-height: 1;
-  font-weight: 800;
-  letter-spacing: 0;
-  text-transform: none;
-  white-space: normal;
+  color: #a78bfa;
+  font-size: clamp(0.72rem, 0.8vw, 0.84rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
   text-align: center;
+  animation: loaderTextIn 0.7s ease-out both;
+  animation-delay: 0.12s;
+}
+
+.portfolio-loader-title {
+  margin: clamp(1rem, 2.6vw, 1.9rem) 0 0;
+  color: #f1ecff;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.15rem, 5.35vw, 4.9rem);
+  line-height: 1.03;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-transform: none;
+  text-align: center;
+  text-shadow: 0 2px 26px rgba(168, 85, 247, 0.18);
+  animation: loaderTitlePulse 2.1s ease-in-out infinite;
+}
+
+.portfolio-loader-subtitle {
+  margin: auto auto 0;
+  max-width: 36rem;
+  color: rgba(221, 214, 254, 0.78);
+  font-size: clamp(0.94rem, 1.28vw, 1.18rem);
+  line-height: 1.6;
+  text-align: center;
+  animation: loaderTextIn 0.75s ease-out both;
+  animation-delay: 0.22s;
 }
 
 .portfolio-loader-bar {
-  width: min(560px, 82vw);
-  height: 6px;
-  background: rgba(255, 255, 255, 0.15);
+  width: min(470px, 80vw);
+  height: 7px;
+  margin: clamp(1rem, 2.4vw, 1.55rem) auto 0;
+  border-radius: 999px;
+  background: rgba(167, 139, 250, 0.2);
   overflow: hidden;
+  position: relative;
 }
 
 .portfolio-loader-bar span {
   display: block;
   width: 0;
   height: 100%;
-  background: #fff;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #8b5cf6, #c084fc);
+  box-shadow: 0 0 24px rgba(168, 85, 247, 0.55);
   transition: width 0.18s ease;
+}
+
+.portfolio-loader-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.28) 45%, transparent 100%);
+  transform: translateX(-100%);
+  animation: loaderBarShimmer 1.35s linear infinite;
 }
 
 @keyframes loaderSlideUp {
@@ -158,6 +269,120 @@ section {
   }
   to {
     transform: translateY(-100%);
+  }
+}
+
+@keyframes loaderBackdropIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes loaderBackdropDrift {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 18% 14%;
+  }
+}
+
+@keyframes loaderCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes loaderTextIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loaderGlowFloatLeft {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate3d(22px, -16px, 0) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes loaderGlowFloatRight {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate3d(-24px, 12px, 0) scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes loaderCardFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes loaderRingSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderSparkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes loaderTitlePulse {
+  0%,
+  100% {
+    text-shadow: 0 2px 26px rgba(168, 85, 247, 0.2);
+  }
+  50% {
+    text-shadow: 0 4px 34px rgba(216, 180, 254, 0.46);
+  }
+}
+
+@keyframes loaderBarShimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
   }
 }
 
@@ -341,12 +566,72 @@ section {
 }
 
 @media (max-width: 768px) {
+  .portfolio-loader {
+    padding: 1rem;
+  }
+
+  .portfolio-loader-card {
+    width: min(700px, 94vw);
+    min-height: clamp(250px, 46vh, 330px);
+    border-radius: 1.55rem;
+    padding: 1.25rem 1.05rem 1.15rem;
+  }
+
+  .portfolio-loader-kicker {
+    letter-spacing: 0.18em;
+  }
+
   .portfolio-loader-title {
-    white-space: pre-line;
-    line-height: 1.05;
+    margin-top: 0.9rem;
+    font-size: clamp(2rem, 10.4vw, 3.25rem);
+    line-height: 1.04;
+  }
+
+  .portfolio-loader-subtitle {
+    max-width: 19.5rem;
+    font-size: clamp(0.86rem, 3.5vw, 0.98rem);
+    line-height: 1.45;
+  }
+
+  .portfolio-loader-bar {
+    width: min(360px, 84vw);
+    height: 6px;
+    margin-top: 0.95rem;
+  }
+
+  .portfolio-loader-glow {
+    filter: blur(58px);
   }
 
   .section-subtitle {
     max-width: none;
+  }
+
+  .glass-panel,
+  .glass-panel-soft,
+  .info-card,
+  .hero-frame {
+    backdrop-filter: blur(8px);
+    box-shadow: 0 12px 32px rgba(7, 4, 18, 0.42);
+  }
+
+  .royal-surface::before,
+  .royal-divider,
+  .royal-glow-dot {
+    animation-duration: 14s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-loader,
+  .portfolio-loader-glow,
+  .portfolio-loader-card,
+  .portfolio-loader-card::before,
+  .portfolio-loader-card::after,
+  .portfolio-loader-kicker,
+  .portfolio-loader-title,
+  .portfolio-loader-subtitle,
+  .portfolio-loader-bar::after {
+    animation: none !important;
   }
 }

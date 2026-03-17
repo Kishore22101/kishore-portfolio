@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
   Download,
@@ -16,6 +16,7 @@ const ROLES = [
 
 export default function Home() {
   const [currentRole, setCurrentRole] = useState(0);
+  const reduceMotion = useReducedMotion();
 
   const highlights = [
     {
@@ -58,12 +59,17 @@ export default function Home() {
       <div className="absolute inset-0 bg-gradient-to-b from-violet-900/10 via-transparent to-fuchsia-900/10" style={{ zIndex: 0 }} />
 
       <div className="section-wrap">
-        <div className="glass-panel rounded-[2rem] px-6 py-8 md:px-12 md:py-14 relative z-10 grid items-center gap-8 lg:gap-12 lg:grid-cols-[1.2fr_0.95fr]">
+        <motion.div
+          className="glass-panel rounded-[2rem] px-6 py-8 md:px-12 md:py-14 relative z-10 grid items-center gap-8 lg:gap-12 lg:grid-cols-[1.2fr_0.95fr]"
+          initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+        >
           <div className="order-2 lg:order-1 relative z-10 text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.5, delay: 0.05 }}
               className="section-kicker mb-6"
             >
               <span className="royal-glow-dot" />
@@ -72,9 +78,9 @@ export default function Home() {
 
             <motion.h1
               className="text-3xl md:text-5xl xl:text-6xl font-extrabold mb-4 text-violet-50 leading-[1.08]"
-              initial={{ opacity: 0, y: 40 }}
+              initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.65, delay: 0.1 }}
             >
               Designing and building
               <span className="block section-accent mt-2">refined digital experiences</span>
@@ -85,7 +91,7 @@ export default function Home() {
               className="text-2xl md:text-3xl text-violet-100 font-semibold mb-3"
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15, duration: 0.8 }}
+              transition={{ delay: 0.2, duration: 0.55 }}
             >
               Kishore Kumar
             </motion.p>
@@ -95,7 +101,7 @@ export default function Home() {
               className="text-xl md:text-2xl text-violet-200 font-semibold min-h-[2rem]"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.35 }}
             >
               {ROLES[currentRole]}
             </motion.p>
@@ -104,7 +110,7 @@ export default function Home() {
               className="text-lg text-violet-100/85 mt-3"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.2, duration: 1 }}
+              transition={{ delay: 0.38, duration: 0.5 }}
             >
               B.Tech - Artificial Intelligence & Data Science
             </motion.p>
@@ -113,7 +119,7 @@ export default function Home() {
               className="text-base md:text-lg text-violet-100/85 mt-3 max-w-2xl"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.4, duration: 1 }}
+              transition={{ delay: 0.5, duration: 0.55 }}
             >
               I develop polished full-stack applications with strong backend thinking, disciplined front-end execution, and an emphasis on clarity, performance, and professional presentation.
             </motion.p>
@@ -146,6 +152,9 @@ export default function Home() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45, delay: 0.55 }}
                   whileHover={{ y: -2 }}
                   className="glass-panel-soft rounded-xl px-4 py-3 inline-flex items-center gap-3 text-violet-100/90"
                 >
@@ -159,6 +168,9 @@ export default function Home() {
               {highlights.map(({ label, value, icon: Icon }) => (
                 <motion.div
                   key={label}
+                  initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 18 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.62 }}
                   whileHover={{ y: -4 }}
                   className="info-card royal-hover rounded-2xl p-5 text-left"
                 >
@@ -175,9 +187,9 @@ export default function Home() {
           <div className="order-1 lg:order-2 relative flex justify-center lg:justify-end mb-2 lg:mb-0">
             <motion.div
               className="hero-frame royal-surface w-full max-w-[380px]"
-              initial={{ opacity: 0, x: 30 }}
+              initial={reduceMotion ? { opacity: 0 } : { opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.9 }}
+              transition={{ duration: 0.65, delay: 0.15 }}
             >
               <div className="glass-panel-soft rounded-[1.75rem] px-6 py-8">
                 <div className="flex items-center justify-between mb-6">
@@ -195,14 +207,18 @@ export default function Home() {
                 >
                   <motion.div
                     className="absolute inset-0 rounded-[1.5rem] border border-violet-300/60 shadow-[0_0_32px_rgba(139,92,246,0.45)]"
-                    animate={{
-                      boxShadow: [
-                        "0 0 14px rgba(139,92,246,0.35)",
-                        "0 0 32px rgba(168,85,247,0.45)",
-                        "0 0 18px rgba(139,92,246,0.38)",
-                      ],
-                    }}
-                    transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
+                    animate={
+                      reduceMotion
+                        ? { boxShadow: "0 0 18px rgba(139,92,246,0.35)" }
+                        : {
+                            boxShadow: [
+                              "0 0 14px rgba(139,92,246,0.35)",
+                              "0 0 32px rgba(168,85,247,0.45)",
+                              "0 0 18px rgba(139,92,246,0.38)",
+                            ],
+                          }
+                    }
+                    transition={reduceMotion ? { duration: 0.2 } : { repeat: Infinity, duration: 2.3, ease: "easeInOut" }}
                   />
 
                   <motion.img
@@ -228,7 +244,7 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

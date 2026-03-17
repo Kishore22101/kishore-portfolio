@@ -1,8 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Briefcase } from "lucide-react";
 
 export default function Internship() {
+  const reduceMotion = useReducedMotion();
+
   const internships = [
     {
       title: "Data Science Intern — CODTECH IT SOLUTIONS",
@@ -30,19 +32,20 @@ export default function Internship() {
     <motion.section
       id="internship"
       className="py-20 text-center"
-      initial={{ opacity: 0, y: 40 }}
+      initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 34 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1, margin: "0px 0px -10% 0px" }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="section-wrap">
         <div className="text-center mb-12">
           <div className="section-kicker mb-5"><span className="royal-glow-dot" />Experience</div>
         <motion.h2
           className="section-title text-4xl font-bold mb-5"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
+          initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.45 }}
         >
           <Briefcase className="inline-block mr-3 text-violet-400" size={36} />
           My Internships
@@ -58,10 +61,10 @@ export default function Internship() {
             <motion.div
               key={i}
               className={`bg-gradient-to-r ${p.color} p-[2px] rounded-2xl shadow-lg hover:shadow-2xl transition duration-300`}
-              initial={{ opacity: 0, y: 40 }}
+              initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.08 }}
-              transition={{ delay: i * 0.08, duration: 0.45 }}
+              transition={{ delay: i * 0.08, duration: 0.42 }}
             >
               <div className="glass-panel royal-surface royal-hover rounded-2xl p-6 h-full flex flex-col justify-between text-left">
                 <div>

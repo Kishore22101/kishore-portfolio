@@ -1,8 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Award, ExternalLink } from "lucide-react";
 
 export default function Certificates() {
+  const reduceMotion = useReducedMotion();
+
   const certificates = [
     {
       title: "Full Stack Web Development Internship & Course Completion",
@@ -58,18 +60,19 @@ export default function Certificates() {
     <motion.section
       id="certificates"
       className="py-20 text-center"
-      initial={{ opacity: 0, y: 34 }}
+      initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1, margin: "0px 0px -10% 0px" }}
-      transition={{ duration: 0.55, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="section-wrap">
         <div className="text-center mb-12">
           <div className="section-kicker mb-5"><span className="royal-glow-dot" />Credentials</div>
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+          initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
           className="section-title text-4xl font-bold mb-5"
         >
           <Award className="inline-block mr-3 text-violet-400" size={36} />
@@ -88,10 +91,10 @@ export default function Certificates() {
               href={cert.link}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 50 }}
+              initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 34 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.08 }}
-              transition={{ delay: index * 0.06, duration: 0.45 }}
+              transition={{ delay: index * 0.05, duration: 0.4 }}
               whileHover={{ scale: 1.05, rotate: 0.5 }}
               className={`relative p-[2px] rounded-2xl shadow-xl hover:shadow-2xl bg-gradient-to-r ${cert.color} transform transition-all duration-300`}
             >

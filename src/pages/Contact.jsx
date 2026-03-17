@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Linkedin, Send } from "lucide-react";
 
 export default function Contact() {
+  const reduceMotion = useReducedMotion();
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -71,10 +72,10 @@ export default function Contact() {
     <motion.section
       id="contact"
       className="relative py-20 text-center overflow-hidden"
-      initial={{ opacity: 0, y: 34 }}
+      initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1, margin: "0px 0px -10% 0px" }}
-      transition={{ duration: 0.55, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="absolute top-10 left-16 w-56 h-56 bg-violet-500/25 blur-3xl rounded-full hidden md:block"></div>
       <div className="absolute bottom-10 right-20 w-56 h-56 bg-fuchsia-500/25 blur-3xl rounded-full hidden md:block"></div>
@@ -84,9 +85,10 @@ export default function Contact() {
           <div className="section-kicker mb-5"><span className="royal-glow-dot" />Contact</div>
           <motion.h2
             className="section-title text-3xl md:text-4xl font-extrabold mb-6 tracking-wide"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.45 }}
           >
             Let’s <span className="section-accent">Connect</span>
           </motion.h2>
@@ -95,14 +97,21 @@ export default function Contact() {
           <motion.p
             className="section-subtitle text-base md:text-lg mb-10"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ delay: 0.12, duration: 0.4 }}
           >
             Share your requirements and I will respond through email with clarity and professionalism.
           </motion.p>
         </div>
 
-        <div className="mb-10">
+        <motion.div
+          className="mb-10"
+          initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.45, delay: 0.12 }}
+        >
           <form onSubmit={handleSubmit} className="glass-panel rounded-2xl p-6 md:p-8 text-left space-y-5 max-w-3xl mx-auto">
             <div className="grid md:grid-cols-2 gap-4">
               <label className="block">
@@ -183,7 +192,7 @@ export default function Contact() {
               </p>
             ) : null}
           </form>
-        </div>
+        </motion.div>
 
         <motion.a
           href="https://www.linkedin.com/in/kishore-k-0717542a1"

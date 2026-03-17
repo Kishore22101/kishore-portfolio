@@ -1,8 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Code, ExternalLink, Github } from "lucide-react";
 
 export default function Projects() {
+  const reduceMotion = useReducedMotion();
+
   const projects = [
     {
       title: "EatzUp — Full Stack Food Delivery App",
@@ -18,18 +20,19 @@ export default function Projects() {
     <motion.section
       id="projects"
       className="py-20 text-center"
-      initial={{ opacity: 0, y: 34 }}
+      initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1, margin: "0px 0px -10% 0px" }}
-      transition={{ duration: 0.55, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="section-wrap">
         <div className="text-center mb-12">
           <div className="section-kicker mb-5"><span className="royal-glow-dot" />Selected Work</div>
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+          initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
           className="section-title text-4xl font-bold mb-5"
         >
           <Code className="inline-block mr-3 text-violet-400" size={36} />
@@ -45,10 +48,10 @@ export default function Projects() {
           {projects.map((proj, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.08 }}
-              transition={{ delay: index * 0.06, duration: 0.45 }}
+              transition={{ delay: index * 0.06, duration: 0.42 }}
               whileHover={{ scale: 1.03 }}
               className={`w-full md:w-2/3 lg:w-1/2 p-[2px] rounded-2xl shadow-lg bg-gradient-to-r ${proj.color} transform hover:shadow-2xl transition-all duration-300`}
             >

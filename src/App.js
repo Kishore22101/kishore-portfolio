@@ -11,7 +11,7 @@ import Projects from "./pages/Projects.jsx";
 import RoyalBackground from "./components/RoyalBackground.jsx";
 
 function App() {
-  const fullName = useMemo(() => "KISHORE KUMAR", []);
+  const fullName = useMemo(() => "Kishore Kumar", []);
   const [typedLength, setTypedLength] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [loaderExiting, setLoaderExiting] = useState(false);
@@ -49,7 +49,6 @@ function App() {
   }, [loaderExiting]);
 
   const typedName = fullName.slice(0, typedLength);
-  const typedNameForDisplay = typedName.replace(" ", "\n");
   const progress = (typedLength / fullName.length) * 100;
 
   if (isLoading) {
@@ -60,9 +59,20 @@ function App() {
         aria-live="polite"
         aria-label="Portfolio is loading"
       >
-        <h1 className="portfolio-loader-title">{typedNameForDisplay}</h1>
-        <div className="portfolio-loader-bar" aria-hidden="true">
-          <span style={{ width: `${progress}%` }} />
+        <div className="portfolio-loader-glow portfolio-loader-glow--left" aria-hidden="true" />
+        <div className="portfolio-loader-glow portfolio-loader-glow--right" aria-hidden="true" />
+
+        <div className="portfolio-loader-card">
+          <p className="portfolio-loader-kicker">Professional Portfolio</p>
+          <h1 className="portfolio-loader-title" aria-label={fullName}>{typedName}</h1>
+
+          <p className="portfolio-loader-subtitle">
+            Developed with precision, structure, and a strong professional identity.
+          </p>
+
+          <div className="portfolio-loader-bar" aria-hidden="true">
+            <span style={{ width: `${progress}%` }} />
+          </div>
         </div>
       </div>
     );
