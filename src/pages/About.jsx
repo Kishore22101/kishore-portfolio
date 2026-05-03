@@ -15,7 +15,7 @@ const PROFILE_CARDS = [
   },
   {
     title: "Communication",
-    value: "English, Tamil, and German (AI) with clear, structured collaboration",
+    value: "English, Tamil, and German (A1)",
     icon: Languages,
   },
   {
