@@ -15,7 +15,7 @@ const PROFILE_CARDS = [
   },
   {
     title: "Communication",
-    value: "English and Tamil with clear, structured collaboration",
+    value: "English, Tamil, and German (AI) with clear, structured collaboration",
     icon: Languages,
   },
   {
@@ -113,14 +113,20 @@ export default function About() {
             <div className="flex flex-wrap gap-3">
               {[
                 "Java",
+                "Python",
+                "C",
+                "Swift",
+                "HTML",
+                "JavaScript",
                 "React.js",
                 "Node.js",
                 "Express.js",
                 "MongoDB",
                 "Tailwind CSS",
-                "SQL",
-                "Python",
-                "C",
+                "MySQL",
+                "GitHub",
+                "Machine Learning",
+                "Data Analysis",
               ].map((skill, i) => (
                 <motion.span
                   key={i}

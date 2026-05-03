@@ -12,6 +12,7 @@ import {
 const ROLES = [
   "Full Stack Developer",
   "Core Java Developer",
+  "AI & Data Science Student",
 ];
 
 export default function Home() {

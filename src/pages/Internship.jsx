@@ -7,16 +7,16 @@ export default function Internship() {
 
   const internships = [
     {
-      title: "Data Science Intern — CODTECH IT SOLUTIONS",
-      duration: "Jan 25, 2025 – Mar 25, 2025",
-      desc: "Performed exploratory data analysis and built ML models for prediction and insights using real datasets. Gained practical experience in data preprocessing, visualization, and performance evaluation.",
+      title: "Data Science Intern — CODTECH IT Solutions",
+      duration: "Jan 2025 – Mar 2025",
+      desc: "Conducted data analysis using Pandas and Matplotlib, built and evaluated machine learning models, and generated insights from datasets.",
       tech: ["Python", "Pandas", "Matplotlib", "Scikit-learn"],
       color: "from-violet-500 to-indigo-500",
     },
     {
       title: "Full Stack Web Development Intern — Edu Tantr",
-      duration: "May 10, 2025 – Aug 10, 2025",
-      desc: "Worked with modern front-end and back-end technologies to build responsive web apps and contributed to real-time deployment practices.",
+      duration: "May 2025 – July 2026",
+      desc: "Worked on front-end and back-end development, built responsive web applications, and gained real-time project experience.",
       projectDetails: [
         "Developed a full-featured Food Delivery App named EatzUp with login, cart, order, and payment modules.",
         "Integrated MongoDB Atlas for cloud database storage and optimized API responses.",
@@ -25,6 +25,27 @@ export default function Internship() {
       ],
       tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
       color: "from-fuchsia-500 to-violet-500",
+    },
+    {
+      title: "Java Developer Intern — Codec Technologies Pvt. Ltd.",
+      duration: "Jan 2026 – Apr 2026",
+      desc: "Completed an AICTE-approved internship program, developed Java-based applications, and strengthened backend and problem-solving skills.",
+      tech: ["Java", "OOP", "Backend Development"],
+      color: "from-amber-500 to-orange-500",
+    },
+    {
+      title: "Full Stack Development Intern — CodeAlpha",
+      duration: "Jan 2026 – Feb 2026",
+      desc: "Participated in a virtual internship program, worked on full stack development tasks, and improved practical implementation skills.",
+      tech: ["HTML", "CSS", "JavaScript", "Full Stack"],
+      color: "from-emerald-500 to-teal-500",
+    },
+    {
+      title: "Artificial Intelligence Intern — Edufyi Tech Solutions",
+      duration: "Apr 2026 – Sep 2026",
+      desc: "Participating in a 6-month remote educational internship program, working on AI concepts and real-time project tasks, gaining hands-on experience in model development, data handling, and problem-solving.",
+      tech: ["Python", "Machine Learning", "AI", "Data Handling"],
+      color: "from-sky-500 to-blue-500",
     },
   ];
 
@@ -56,7 +77,7 @@ export default function Internship() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {internships.map((p, i) => (
             <motion.div
               key={i}
