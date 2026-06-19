@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { Linkedin, Send } from "lucide-react";
+import { Linkedin, MessageCircle, Send } from "lucide-react";
 
 export default function Contact() {
   const reduceMotion = useReducedMotion();
@@ -90,6 +90,7 @@ export default function Contact() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.45 }}
           >
+            <MessageCircle className="inline-block mr-3 text-violet-400" size={34} />
             Let’s <span className="section-accent">Connect</span>
           </motion.h2>
           <div className="royal-divider" />

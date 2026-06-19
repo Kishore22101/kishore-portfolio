@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { GraduationCap, Languages, Sparkles, Target } from "lucide-react";
+import { GraduationCap, Languages, Sparkles, Target, User } from "lucide-react";
 
 const PROFILE_CARDS = [
   {
@@ -50,6 +50,7 @@ export default function About() {
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.5 }}
         >
+          <User className="inline-block mr-3 text-violet-400" size={36} />
           About <span className="section-accent">Me</span>
         </motion.h2>
           <div className="royal-divider" />
