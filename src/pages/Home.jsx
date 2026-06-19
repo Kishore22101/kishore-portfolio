@@ -35,7 +35,7 @@ export default function Home() {
   const profileLinks = [
     {
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/kishore-k-0717542a1/",
+      href: "https://www.linkedin.com/in/kishore-kumar-0717542a1",
       icon: Linkedin,
     },
     {

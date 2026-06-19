@@ -6,7 +6,7 @@ export default function Footer() {
   const socialLinks = [
     {
       icon: <Linkedin size={22} />,
-      href: "https://www.linkedin.com/in/kishore-k-0717542a1/",
+      href: "https://www.linkedin.com/in/kishore-kumar-0717542a1",
       label: "LinkedIn",
     },
     {

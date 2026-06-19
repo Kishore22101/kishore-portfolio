@@ -80,9 +80,9 @@ const NAV_LINKS = [
 ];
 
 const SOCIAL_LINKS = [
-  { href: "https://www.linkedin.com/in/kishore-thiyagarajan-3b2b31293/", Icon: LinkedInIcon, label: "LinkedIn" },
+  { href: "https://www.linkedin.com/in/kishore-kumar-0717542a1", Icon: LinkedInIcon, label: "LinkedIn" },
   { href: "https://github.com/Kishore22101",                              Icon: GitHubIcon,   label: "GitHub" },
-  { href: "mailto:kishorethiyagarajan2210@gmail.com",                    Icon: MailSocialIcon, label: "Email" },
+  { href: "mailto:kishore22oct@gmail.com",                    Icon: MailSocialIcon, label: "Email" },
 ];
 
 // ─── Animation variants ───────────────────────────────────────────────────────

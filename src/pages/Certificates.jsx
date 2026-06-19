@@ -17,7 +17,7 @@ export default function Certificates() {
     {
       title: "AWS ML Foundations",
       org: "AWS / Udacity",
-      link: "https://www.linkedin.com/in/kishore-k-0717542a1/",
+      link: "https://www.linkedin.com/in/kishore-kumar-0717542a1",
       desc: "Completed the AWS Machine Learning Foundations course, covering core ML concepts, model training, and cloud-based AI services.",
       date: "2025",
       color: "from-orange-500 to-amber-500",
@@ -49,7 +49,7 @@ export default function Certificates() {
     {
       title: "Python Basic",
       org: "Udemy",
-      link: "https://www.linkedin.com/in/kishore-k-0717542a1/",
+      link: "https://www.linkedin.com/in/kishore-kumar-0717542a1",
       desc: "Mastered Python fundamentals including data types, functions, loops, and introductory scripting for automation and analysis.",
       date: "2023",
       color: "from-green-500 to-emerald-500",

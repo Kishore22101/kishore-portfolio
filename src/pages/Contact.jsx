@@ -196,7 +196,7 @@ export default function Contact() {
         </motion.div>
 
         <motion.a
-          href="https://www.linkedin.com/in/kishore-k-0717542a1"
+          href="https://www.linkedin.com/in/kishore-kumar-0717542a1"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.1, boxShadow: "0 0 18px #8b5cf6" }}
