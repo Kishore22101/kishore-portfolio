@@ -113,32 +113,34 @@ export default function About() {
 
             <div className="flex flex-wrap gap-3">
               {[
-                "Java",
-                "Python",
-                "C",
-                "Swift",
-                "HTML",
-                "JavaScript",
-                "React.js",
-                "Node.js",
-                "Express.js",
-                "MongoDB",
-                "Tailwind CSS",
-                "MySQL",
-                "GitHub",
-                "Machine Learning",
-                "Data Analysis",
-              ].map((skill, i) => (
+                { name: "Java" },
+                { name: "Python", level: "basic" },
+                { name: "C" },
+                { name: "Swift", level: "basic" },
+                { name: "HTML" },
+                { name: "JavaScript" },
+                { name: "React.js", level: "basic" },
+                { name: "Node.js", level: "basic" },
+                { name: "Express.js", level: "basic" },
+                { name: "MongoDB", level: "basic" },
+                { name: "Tailwind CSS", level: "basic" },
+                { name: "GitHub" },
+              ].map(({ name, level }, i) => (
                 <motion.span
                   key={i}
                   initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.35, delay: i * 0.03 }}
-                  whileHover={{ scale: 1.08 }}
-                  className="chip px-4 py-2 text-sm md:text-base font-medium rounded-full transition-all"
+                  transition={{ duration: 0.35, delay: i * 0.04 }}
+                  whileHover={{ scale: 1.07, y: -2 }}
+                  className="chip inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full transition-all"
                 >
-                  {skill}
+                  {name}
+                  {level && (
+                    <span className="text-[0.65rem] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-violet-500/20 text-violet-300 border border-violet-400/25">
+                      {level}
+                    </span>
+                  )}
                 </motion.span>
               ))}
             </div>

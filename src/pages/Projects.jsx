@@ -9,7 +9,7 @@ export default function Projects() {
     {
       title: "EatzUp — Full Stack Food Delivery App",
       desc: "A complete food ordering platform with login, cart, order, payment, and PDF invoice generation. Built with MERN stack and a modern, responsive UI.",
-      video: "https://www.loom.com/share/7ef6e7d69813471d87d6547c005c8c82?sid=af770c27-b3e7-4003-956f-361f2141cf4a", // replace this with your actual demo video link
+      video: "https://eatzup.vercel.app/",
       github: "https://github.com/Kishore22101/Food-Delivery-App",
       tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
       color: "from-violet-500 to-fuchsia-500",

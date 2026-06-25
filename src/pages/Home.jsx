@@ -61,7 +61,7 @@ export default function Home() {
 
       <div className="section-wrap">
         <motion.div
-          className="glass-panel rounded-[2rem] px-6 py-8 md:px-12 md:py-14 relative z-10 grid items-center gap-8 lg:gap-12 lg:grid-cols-[1.2fr_0.95fr]"
+          className="glass-panel rounded-[2rem] px-6 py-8 md:px-12 md:py-14 relative z-10 grid items-start gap-8 lg:gap-12 lg:grid-cols-[1.2fr_0.95fr]"
           initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: "easeOut" }}
@@ -125,53 +125,13 @@ export default function Home() {
               I develop polished full-stack applications with strong backend thinking, disciplined front-end execution, and an emphasis on clarity, performance, and professional presentation.
             </motion.p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <motion.a
-                href="#about"
-                className="btn-neon inline-flex items-center justify-center gap-2"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                Explore Profile <ArrowRight size={18} />
-              </motion.a>
-
-              <motion.a
-                href="/assets/Kishore_Resume.pdf"
-                download
-                className="btn-ghost inline-flex items-center justify-center gap-2"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.2 }}
-              >
-                Download Resume <Download size={18} />
-              </motion.a>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3 justify-center lg:justify-start">
-              {profileLinks.map(({ label, href, icon: Icon }) => (
-                <motion.a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, delay: 0.55 }}
-                  whileHover={{ y: -2 }}
-                  className="glass-panel-soft rounded-xl px-4 py-3 inline-flex items-center gap-3 text-violet-100/90"
-                >
-                  <Icon size={18} className="text-violet-300" />
-                  <span className="text-sm font-semibold">{label}</span>
-                </motion.a>
-              ))}
-            </div>
-
-            <div className="mt-10 grid gap-4 md:grid-cols-2">
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
               {highlights.map(({ label, value, icon: Icon }) => (
                 <motion.div
                   key={label}
                   initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 18 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.62 }}
+                  transition={{ duration: 0.5, delay: 0.55 }}
                   whileHover={{ y: -4 }}
                   className="info-card royal-hover rounded-2xl p-5 text-left"
                 >
@@ -185,7 +145,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2 relative flex justify-center lg:justify-end mb-2 lg:mb-0">
+          <div className="order-1 lg:order-2 relative flex flex-col items-center lg:items-end gap-4 mb-2 lg:mb-0">
             <motion.div
               className="hero-frame royal-surface w-full max-w-[380px]"
               initial={reduceMotion ? { opacity: 0 } : { opacity: 0, x: 30 }}
@@ -242,6 +202,67 @@ export default function Home() {
                     <p className="meta-value text-sm leading-relaxed">Tamil Nadu, India</p>
                   </div>
                 </div>
+              </div>
+            </motion.div>
+
+            {/* Action Buttons - 2x2 Grid */}
+            <motion.div
+              className="w-full max-w-[380px] flex flex-col gap-3"
+              initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.45 }}
+            >
+              {/* Row 1 — Primary actions */}
+              <div className="grid grid-cols-2 gap-3">
+                <motion.a
+                  href="#about"
+                  className="btn-neon inline-flex items-center justify-center gap-2 text-sm"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Explore Profile <ArrowRight size={15} />
+                </motion.a>
+
+                <motion.a
+                  href="/assets/Kishore_Resume.pdf"
+                  download
+                  className="btn-ghost inline-flex items-center justify-center gap-2 text-sm"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  Download Resume <Download size={15} />
+                </motion.a>
+              </div>
+
+              {/* Row 2 — Social links */}
+              <div className="grid grid-cols-2 gap-3">
+                <motion.a
+                  href="https://www.linkedin.com/in/kishore-kumar-0717542a1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-pill"
+                  whileHover={{ scale: 1.05, y: -1 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Linkedin size={15} className="text-violet-300" />
+                  <span>LinkedIn</span>
+                </motion.a>
+
+                <motion.a
+                  href="https://github.com/Kishore22101"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-pill"
+                  whileHover={{ scale: 1.05, y: -1 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Github size={15} className="text-violet-300" />
+                  <span>GitHub</span>
+                </motion.a>
               </div>
             </motion.div>
           </div>
