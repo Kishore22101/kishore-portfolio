@@ -32,18 +32,8 @@ export default function Home() {
     },
   ];
 
-  const profileLinks = [
-    {
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/in/kishore-kumar-0717542a1",
-      icon: Linkedin,
-    },
-    {
-      label: "GitHub",
-      href: "https://github.com/Kishore22101",
-      icon: Github,
-    },
-  ];
+
+
 
   useEffect(() => {
     const interval = setInterval(() => {
