@@ -36,7 +36,7 @@ A personal portfolio website presenting my background, technical skills, interns
 
 This site is designed to reflect the same standards I apply in software development — clarity, precision, and a professional finish.
 
-**Live at:** [https://kishore-portfolio-ten-bay.vercel.app/](https://kishore-portfolio-ten-bay.vercel.app/)
+**Live at:** [https://kishorek-portfolio.vercel.app/](https://kishorek-portfolio.vercel.app/)
 
 ---
 
