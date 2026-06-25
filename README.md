@@ -1,180 +1,195 @@
 <div align="center">
 
-# ✦ Kishore Kumar — Portfolio
+<h1>Kishore Kumar — Personal Portfolio</h1>
 
-**A refined, production-grade personal portfolio built with React, Framer Motion & Tailwind CSS**
-
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-7c3aed?style=for-the-badge&logo=vercel&logoColor=white)](https://kishore-portfolio-ten-bay.vercel.app/)
-[![React](https://img.shields.io/badge/React-18-61dafb?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.x-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Framer Motion](https://img.shields.io/badge/Framer%20Motion-12-ff5733?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
-[![License](https://img.shields.io/badge/License-MIT-a78bfa?style=for-the-badge)](./LICENSE)
+<p>A refined, production-grade personal portfolio built with React, Framer Motion, and Tailwind CSS.</p>
 
 <br/>
 
-![Portfolio Preview](./public/assets/kishore.png)
+<a href="https://kishore-portfolio-ten-bay.vercel.app/">
+  <img src="https://img.shields.io/badge/Live%20Demo-Visit%20Site-7c3aed?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo"/>
+</a>
+&nbsp;
+<a href="https://github.com/Kishore22101/kishore-portfolio/stargazers">
+  <img src="https://img.shields.io/github/stars/Kishore22101/kishore-portfolio?style=for-the-badge&color=7c3aed&logo=github&logoColor=white" alt="Stars"/>
+</a>
+&nbsp;
+<img src="https://img.shields.io/badge/License-MIT-a78bfa?style=for-the-badge" alt="License MIT"/>
+
+<br/><br/>
+
+<img src="https://img.shields.io/badge/React-18-61dafb?style=flat-square&logo=react&logoColor=white"/>
+&nbsp;
+<img src="https://img.shields.io/badge/Tailwind%20CSS-3.x-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white"/>
+&nbsp;
+<img src="https://img.shields.io/badge/Framer%20Motion-12-ff4e00?style=flat-square&logo=framer&logoColor=white"/>
+&nbsp;
+<img src="https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=flat-square&logo=vercel&logoColor=white"/>
 
 </div>
 
 ---
 
-## 📌 Overview
+## Overview
 
-A personal portfolio website that presents my background, skills, projects, and professional links in a clean and modern interface. Built with a focus on smooth animations, responsive design, and a consistent dark visual language.
+A personal portfolio website presenting my background, technical skills, internship experience, and project work. Built with a strong focus on smooth animations, responsive layout, and a consistent dark visual identity.
 
-This site is designed to reflect the same standards I apply to the software I build — clarity, attention to detail, and a polished finish.
+This site is designed to reflect the same standards I apply in software development — clarity, precision, and a professional finish.
 
----
-
-## 🚀 Live Site
-
-> **[https://kishore-portfolio-ten-bay.vercel.app/](https://kishore-portfolio-ten-bay.vercel.app/)**
-
-Deployed via **Vercel** — auto-deploys on every push to `main`.
+**Live at:** [https://kishore-portfolio-ten-bay.vercel.app/](https://kishore-portfolio-ten-bay.vercel.app/)
 
 ---
 
-## ✨ Features
+## Features
 
 | Feature | Description |
 |---|---|
-| 🎨 **Royal Dark Theme** | Deep violet/fuchsia glassmorphic design system |
-| 🌀 **Framer Motion** | Page-level and component-level animations throughout |
-| 📱 **Fully Responsive** | Optimised for mobile, tablet, and desktop |
-| ♿ **Reduced Motion** | Respects `prefers-reduced-motion` for accessibility |
-| 📄 **Resume Download** | Direct PDF download from the home page |
-| 📬 **Email Contact** | Contact form powered by EmailJS |
-| 🔍 **SEO Ready** | Meta tags via `react-helmet-async` |
-| ⚡ **Fast Load** | Optimised build via Create React App |
+| Dark Glassmorphic Theme | Deep violet and fuchsia design system with layered glass surfaces |
+| Framer Motion Animations | Entry, scroll, and hover animations throughout all sections |
+| Fully Responsive | Optimised for mobile, tablet, and desktop viewports |
+| Reduced Motion Support | Respects `prefers-reduced-motion` for accessibility |
+| Resume Download | Direct PDF download linked from the home section |
+| Email Contact Form | Serverless contact form powered by EmailJS |
+| SEO Meta Tags | Managed via `react-helmet-async` |
+| Role Ticker | Animated rotating role display on the hero section |
 
 ---
 
-## 🗂️ Site Sections
+## Site Sections
 
 ```
-/  (Home)         → Hero with profile card, role ticker, action buttons
-├── About         → Bio, profile cards, technical skills
-├── Internship    → Work experience & internship details
-├── Projects      → Featured project case studies
-├── Certificates  → Academic & professional certifications
-└── Contact       → EmailJS-powered contact form
+/  (Home)         →  Hero, profile card, action buttons, highlights
+├── About         →  Bio, profile cards, technical skills with levels
+├── Internship    →  Professional experience and internship details
+├── Projects      →  Featured project case studies with live demo links
+├── Certificates  →  Academic and professional certifications
+└── Contact       →  EmailJS-powered contact form
 ```
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Core
-| Technology | Purpose |
-|---|---|
-| **React 18** | UI framework & component architecture |
-| **Framer Motion 12** | Animations, transitions, gesture handling |
-| **Tailwind CSS 3** | Utility-first styling |
-| **Lucide React** | Consistent icon system |
 
-### Tooling
+| Technology | Version | Purpose |
+|---|---|---|
+| React | 18 | UI framework and component architecture |
+| Framer Motion | 12 | Animations, transitions, gesture handling |
+| Tailwind CSS | 3.x | Utility-first styling system |
+| Lucide React | Latest | Consistent and lightweight icon set |
+
+### Supporting Libraries
+
+| Library | Purpose |
+|---|---|
+| EmailJS | Serverless contact form submission |
+| react-helmet-async | SEO meta tag management per page |
+| react-icons | Extended icon library |
+
+### Tooling & Deployment
+
 | Tool | Purpose |
 |---|---|
-| **Create React App** | Build system & dev server |
-| **EmailJS** | Serverless contact form |
-| **react-helmet-async** | SEO meta management |
-| **Vercel** | Hosting & CI/CD |
+| Create React App | Build system and dev server |
+| Vercel | Hosting and CI/CD pipeline |
+| GitHub | Version control and source |
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 kishore-portfolio/
 ├── public/
 │   └── assets/
-│       ├── kishore.png          # Profile photo
-│       └── Kishore_Resume.pdf   # Downloadable resume
+│       ├── kishore.png             Profile photograph
+│       └── Kishore_Resume.pdf      Downloadable resume
 ├── src/
 │   ├── components/
-│   │   ├── Navbar.jsx           # Responsive navigation
-│   │   ├── Footer.jsx           # Footer with links
-│   │   ├── RoyalBackground.jsx  # Animated background layer
-│   │   └── ScrollToTop.jsx      # Scroll restoration
+│   │   ├── Navbar.jsx              Responsive sticky navigation
+│   │   ├── Footer.jsx              Footer with social links
+│   │   ├── RoyalBackground.jsx     Animated radial background layer
+│   │   └── ScrollToTop.jsx         Scroll position restoration
 │   ├── pages/
-│   │   ├── Home.jsx             # Landing / hero section
-│   │   ├── About.jsx            # Profile & skills
-│   │   ├── Internship.jsx       # Experience
-│   │   ├── Projects.jsx         # Featured projects
-│   │   ├── Certificates.jsx     # Certifications
-│   │   └── Contact.jsx          # Contact form
-│   ├── App.js                   # Root app & routing
-│   ├── index.css                # Global design system & tokens
-│   └── index.js                 # Entry point
-├── package.json
+│   │   ├── Home.jsx                Landing / hero section
+│   │   ├── About.jsx               Profile overview and technical skills
+│   │   ├── Internship.jsx          Work and internship experience
+│   │   ├── Projects.jsx            Featured project showcase
+│   │   ├── Certificates.jsx        Certifications display
+│   │   └── Contact.jsx             Contact form with EmailJS
+│   ├── App.js                      Root component and section layout
+│   ├── index.css                   Global design system and CSS tokens
+│   └── index.js                    Application entry point
 ├── tailwind.config.js
+├── package.json
 └── README.md
 ```
 
 ---
 
-## ⚙️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- **Node.js** ≥ 16
-- **npm** ≥ 8
+- Node.js >= 16
+- npm >= 8
 
 ### Installation
 
 ```bash
-# 1. Clone the repository
+# Clone the repository
 git clone https://github.com/Kishore22101/kishore-portfolio.git
 
-# 2. Navigate into the project
+# Navigate into the project
 cd kishore-portfolio
 
-# 3. Install dependencies
+# Install dependencies
 npm install
 
-# 4. Start the development server
+# Start the development server
 npm start
 ```
 
-Open **[http://localhost:3000](http://localhost:3000)** in your browser.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Build for Production
+### Production Build
 
 ```bash
 npm run build
 ```
 
-Output is in the `build/` folder, ready for deployment.
+The optimised output is placed in the `build/` directory, ready for deployment.
 
 ---
 
-## 🎨 Design System
+## Design System
 
-The site uses a custom design token system defined in `src/index.css`:
+All design tokens are defined in `src/index.css` and composed with Tailwind utilities.
 
-| Token | Description |
+| Class | Description |
 |---|---|
-| `.glass-panel` | Primary glassmorphic card surface |
-| `.glass-panel-soft` | Lighter card variant |
-| `.info-card` | Data display card |
-| `.btn-neon` | Primary CTA button (violet gradient) |
+| `.glass-panel` | Primary glassmorphic card surface with backdrop blur |
+| `.glass-panel-soft` | Lighter secondary card variant |
+| `.info-card` | Structured data display card |
+| `.btn-neon` | Primary CTA — violet gradient with glow shadow |
 | `.btn-ghost` | Secondary outlined button |
-| `.social-pill` | Social link pill button |
-| `.chip` | Skill/tag badge |
-| `.section-kicker` | Small labeling pill above headings |
-| `.royal-divider` | Animated gradient divider line |
-| `.royal-glow-dot` | Pulsing accent dot |
-| `.meta-label` | Small uppercase category label |
-| `.meta-value` | Bold data value text |
+| `.social-pill` | Social link pill with dark glass background |
+| `.chip` | Skill tag / badge with optional level indicator |
+| `.section-kicker` | Small label pill displayed above section headings |
+| `.royal-divider` | Animated shimmer gradient divider line |
+| `.royal-glow-dot` | Pulsing violet accent dot |
+| `.meta-label` | Uppercase category label in muted violet |
+| `.meta-value` | Bold white data value text |
 
 ---
 
-## 📬 Contact Configuration
+## Contact Form Setup
 
-The contact form uses **[EmailJS](https://www.emailjs.com/)**. To configure for your own account:
+The contact form uses [EmailJS](https://www.emailjs.com/) for serverless email delivery. To configure:
 
 1. Create an account at [emailjs.com](https://www.emailjs.com/)
-2. Create a **Service**, **Template**, and get your **Public Key**
+2. Create a **Service**, **Template**, and retrieve your **Public Key**
 3. Update `src/pages/Contact.jsx` with your credentials:
 
 ```js
@@ -188,46 +203,61 @@ emailjs.sendForm(
 
 ---
 
-## 🚢 Deployment
+## Deployment
 
-This project is deployed on **Vercel**:
+The project is deployed on Vercel with automatic deployments on every push to `main`.
 
 ```bash
-# Push to main — Vercel auto-deploys
+# Push to trigger an automatic Vercel deployment
 git push origin main
 ```
 
-To deploy manually:
+To deploy manually via the Vercel CLI:
+
 ```bash
+npm install -g vercel
 npm run build
-# Then drag the build/ folder to vercel.com/new
+vercel --prod
 ```
 
 ---
 
-## 👤 Author
+## Author
 
 **Kishore Kumar**
-B.Tech — Artificial Intelligence & Data Science
+B.Tech — Artificial Intelligence and Data Science
 J.N.N Institute of Engineering, Tamil Nadu, India
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077b5?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/kishore-kumar-0717542a1)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=flat-square&logo=github)](https://github.com/Kishore22101)
+<a href="https://www.linkedin.com/in/kishore-kumar-0717542a1">
+  <img src="https://img.shields.io/badge/LinkedIn-Kishore%20Kumar-0077b5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+</a>
+&nbsp;
+<a href="https://github.com/Kishore22101">
+  <img src="https://img.shields.io/badge/GitHub-Kishore22101-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
+</a>
+&nbsp;
+<a href="https://kishore-portfolio-ten-bay.vercel.app/">
+  <img src="https://img.shields.io/badge/Portfolio-Live%20Site-7c3aed?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio"/>
+</a>
 
 ---
 
-## 📄 License
+## License
 
-This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for details.
+This project is licensed under the **MIT License**.
 
-> You are free to use this project as a reference or starting point for your own portfolio. Please give credit if you do.
+You are free to use this project as a reference or starting point for your own portfolio. Attribution is appreciated but not required.
 
 ---
 
 <div align="center">
 
-**Made with focus, discipline, and a lot of Framer Motion**
+<sub>Built with focus, discipline, and Framer Motion.</sub>
 
-⭐ Star this repo if you found it useful!
+<br/>
+
+<a href="https://github.com/Kishore22101/kishore-portfolio">
+  <img src="https://img.shields.io/badge/View%20on%20GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="View on GitHub"/>
+</a>
 
 </div>
