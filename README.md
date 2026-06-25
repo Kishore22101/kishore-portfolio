@@ -236,7 +236,7 @@ J.N.N Institute of Engineering, Tamil Nadu, India
   <img src="https://img.shields.io/badge/GitHub-Kishore22101-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub"/>
 </a>
 &nbsp;
-<a href="https://kishore-portfolio-ten-bay.vercel.app/">
+<a href="https://kishorek-portfolio.vercel.app/">
   <img src="https://img.shields.io/badge/Portfolio-Live%20Site-7c3aed?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio"/>
 </a>
 
